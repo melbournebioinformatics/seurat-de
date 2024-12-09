@@ -1,0 +1,84 @@
+---
+title: 'Setup, Quality Control and Sample Integration.'
+teaching: 10
+exercises: 2
+---
+
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- How do you write a lesson using R Markdown and `{sandpaper}`?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain how to use markdown with the new lesson template
+- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: callout
+
+This tutorial is partially based on existing material from:
+
+- https://satijalab.org/seurat/articles/seurat5_integration
+- https://satijalab.org/seurat/articles/de_vignette
+- https://hbctraining.github.io/scRNA-seq_online/
+- https://bookdown.org/ytliu13207/SingleCellMultiOmicsDataAnalysis/
+
+:::::::::::::::::::::::::::::::::::::::::::::
+
+
+## Setup
+**Run the code block below to install the packages needed for this workshop.**
+
+```{r install, results='hide', message=F, warning=F}
+install.packages('Seurat')
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+remotes::install_github("satijalab/seurat-data", quiet = TRUE)
+if (!require("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")
+}
+BiocManager::install("DESeq2")
+install.packages("tidyverse")
+install.packages("pheatmap")
+install.packages("metap")
+```
+
+To check if installed properly, load each package in one at a time using the `library()` function.
+
+```{r setup, results='hide', message=F, warning=F}
+library(Seurat, warn.conflicts=F, quietly=T)
+library(SeuratData, warn.conflicts=F, quietly=T)
+library(tidyverse, warn.conflicts=F, quietly=T)
+library(DESeq2, warn.conflicts=F, quietly=T)
+library(patchwork, warn.conflicts=F, quietly=T)
+library(pheatmap, warn.conflicts=F, quietly=T)
+library(grid, warn.conflicts=F, quietly=T)
+library(metap, warn.conflicts=F, quietly=T)
+
+set.seed(4242) # Set Seed for Reproducibility
+```
+
+We're using the ifnb public dataset provided by Seurat. This dataset contains PBMC data from 8 lupus patients before and after interferon beta treatment.
+
+I strongly encourage you to explore the other datasets offered by the SeuratData package, it can be really good practice in your spare time.
+
+The ifnb Seurat object we're loading in here was originally made in Seurat v4, there have since been a lot of changes from Seurat v4 to v5 so we'll use the UpdateSeuratObject() function to update the Seurat object so that it is compatible for today.
+
+!!! question
+    Looking at the output from the `str()` function on the ifnb seurat object, can you tell whether this seurat object is processed or unprocessed?
+
+ANSWER: When loading in seurat objects, we can have a look at what processing steps have been performed on it by using the str() function. In the output we can tell that the ifnb Seurat object is unprocessed because:
+
+1)  the scale.data slot is empty
+
+2)  no variable features have been identified
+
+3)  no dimensionality reduction functions have been performed.
+
+```{r available-data}
+AvailableData() # if you want to see the available datasets use this function
+```
