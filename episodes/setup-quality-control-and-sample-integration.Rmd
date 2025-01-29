@@ -53,7 +53,7 @@ To check if installed properly, load each package in one at a time using the `li
 library(Seurat, warn.conflicts=F, quietly=T)
 #library(SeuratData, warn.conflicts=F, quietly=T)
 library(tidyverse, warn.conflicts=F, quietly=T)
-# library(DESeq2, warn.conflicts=F, quietly=T)
+library(DESeq2, warn.conflicts=F, quietly=T)
 library(patchwork, warn.conflicts=F, quietly=T)
 library(pheatmap, warn.conflicts=F, quietly=T)
 library(grid, warn.conflicts=F, quietly=T)
