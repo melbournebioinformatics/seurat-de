@@ -1,5 +1,5 @@
 ---
-title: "Using RMarkdown"
+title: 'Differential Gene Expression when dealing with two treatment conditions.'
 teaching: 10
 exercises: 2
 ---
@@ -12,21 +12,18 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Gain more familiarity with standard scRNA-seq Quality Control (QC) steps.
-- Understand and get comfortable using various integration strategies (harmoy and seuratCCA).
-- Understand when and how to use all of the differential expression functions offered by Seurat: FindMarkers(), FindConservedMarkers(), and FindAllMarkers().
-- Learn how to use differential expression tools meant for bulk data, like DESeq2, for single-cell 'pseudobulk' data and understand why you might choose this approach.
-- Learn different ways to visualise both in-built Seurat functions and external packages like pheatmap.
+- Explain how to use markdown with the new lesson template
+- Demonstrate how to include pieces of code, figures, and nested challenge blocks
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
 This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+[Pandoc-flavored Markdown][pandoc] for static files (with extension `.md`) and
+[R Markdown][r-markdown] for dynamic files that can render code into output
+(with extension `.Rmd`). Please refer to the [Introduction to The Carpentries
+Workbench][carpentries-workbench] for full documentation.
 
 What you need to know is that there are three sections required for a valid
 Carpentries lesson template:
@@ -77,7 +74,7 @@ You can add a line with at least three colons and a `solution` tag.
 
 ## Figures
 
-You can also include figures generated from R Markdown:
+You can include figures generated from R Markdown:
 
 
 ``` r
@@ -90,28 +87,15 @@ pie(
 ```
 
 <div class="figure" style="text-align: center">
-<img src="fig/introduction-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid"  />
+<img src="fig/differential-gene-expression-when-dealing-with-two-treatment-conditions-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid"  />
 <p class="caption">Sun arise each and every morning</p>
 </div>
-
-Or you can use standard markdown for static figures with the following syntax:
+Or you can use pandoc markdown for static figures with the following syntax:
 
 `![optional caption that appears below the figure](figure url){alt='alt text for
 accessibility purposes'}`
 
 ![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
 
 ## Math
 
@@ -131,4 +115,3 @@ Cool, right?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-[r-markdown]: https://rmarkdown.rstudio.com/
