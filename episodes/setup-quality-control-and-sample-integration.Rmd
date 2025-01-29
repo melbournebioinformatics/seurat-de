@@ -33,30 +33,30 @@ This tutorial is partially based on existing material from:
 **Run the code block below to install the packages needed for this workshop.**
 
 ```{r install, results='hide', message=F, warning=F}
-install.packages('Seurat')
-if (!requireNamespace("remotes", quietly = TRUE)) {
-  install.packages("remotes")
-}
-remotes::install_github("satijalab/seurat-data", quiet = TRUE)
-if (!require("BiocManager", quietly = TRUE)) {
-  install.packages("BiocManager")
-}
-BiocManager::install("DESeq2")
-install.packages("tidyverse")
-install.packages("pheatmap")
-install.packages("metap")
+# install.packages('Seurat')
+# if (!requireNamespace("remotes", quietly = TRUE)) {
+#   install.packages("remotes")
+# }
+# remotes::install_github("satijalab/seurat-data", quiet = TRUE)
+# if (!require("BiocManager", quietly = TRUE)) {
+#   install.packages("BiocManager")
+# }
+# BiocManager::install("DESeq2")
+# install.packages("tidyverse")
+# install.packages("pheatmap")
+# install.packages("metap")
 ```
 
 To check if installed properly, load each package in one at a time using the `library()` function.
 
 ```{r setup, results='hide', message=F, warning=F}
 library(Seurat, warn.conflicts=F, quietly=T)
-library(SeuratData, warn.conflicts=F, quietly=T)
+#library(SeuratData, warn.conflicts=F, quietly=T)
 library(tidyverse, warn.conflicts=F, quietly=T)
 # library(DESeq2, warn.conflicts=F, quietly=T)
-# library(patchwork, warn.conflicts=F, quietly=T)
-# library(pheatmap, warn.conflicts=F, quietly=T)
-# library(grid, warn.conflicts=F, quietly=T)
+library(patchwork, warn.conflicts=F, quietly=T)
+library(pheatmap, warn.conflicts=F, quietly=T)
+library(grid, warn.conflicts=F, quietly=T)
 # library(metap, warn.conflicts=F, quietly=T)
 
 set.seed(4242) # Set Seed for Reproducibility
