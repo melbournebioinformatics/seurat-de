@@ -53,11 +53,11 @@ To check if installed properly, load each package in one at a time using the `li
 library(Seurat, warn.conflicts=F, quietly=T)
 library(SeuratData, warn.conflicts=F, quietly=T)
 library(tidyverse, warn.conflicts=F, quietly=T)
-library(DESeq2, warn.conflicts=F, quietly=T)
-library(patchwork, warn.conflicts=F, quietly=T)
-library(pheatmap, warn.conflicts=F, quietly=T)
-library(grid, warn.conflicts=F, quietly=T)
-library(metap, warn.conflicts=F, quietly=T)
+# library(DESeq2, warn.conflicts=F, quietly=T)
+# library(patchwork, warn.conflicts=F, quietly=T)
+# library(pheatmap, warn.conflicts=F, quietly=T)
+# library(grid, warn.conflicts=F, quietly=T)
+# library(metap, warn.conflicts=F, quietly=T)
 
 set.seed(4242) # Set Seed for Reproducibility
 ```
@@ -80,5 +80,5 @@ ANSWER: When loading in seurat objects, we can have a look at what processing st
 3)  no dimensionality reduction functions have been performed.
 
 ```{r available-data}
-AvailableData() # if you want to see the available datasets use this function
+# AvailableData() # if you want to see the available datasets use this function
 ```
