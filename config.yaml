@@ -13,7 +13,7 @@ carpentry: 'uom'
 carpentry_description: 'Lesson Description'
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'Gene ontology analysis and integration for single-cell RNA-seq data'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: ~ # FIXME
@@ -29,7 +29,7 @@ life_cycle: 'pre-alpha' # FIXME
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/melbournebioinformatics/workbench-template-rmd' # FIXME
+source: 'https://github.com/melbournebioinformatics/seurat-de' # FIXME
 
 # Default branch of your lesson
 branch: 'main'
@@ -62,15 +62,18 @@ contact: 'fixme@fixme.org' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - introduction.Rmd
+- setup-quality-control-and-sample-integration.Rmd
+- differential-gene-expression-when-dealing-with-two-treatment-conditions.Rmd
+- differential-expression-using-a-pseudobulk-approach-and-deseq2.Rmd
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
@@ -78,6 +81,5 @@ profiles:
 # sandpaper and varnish versions) should live
 
 # This is the MB varnish, which is a custom version of the Carpentries varnish
-varnish: 'melbournebioinformatics/mb-varnish@main'
-url: 'melbournebioinformatics.github.io/mb-varnish'
-
+varnish: 'melbournebioinformatics/uom-varnish@main'
+url: 'melbournebioinformatics.github.io/uom-varnish'
