@@ -30,7 +30,7 @@ life_cycle: 'alpha'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/melbournebioinformatics/seurat-de-2025' 
+source: 'https://github.com/melbournebioinformatics/seurat-de' 
 
 # Default branch of your lesson
 branch: 'main'
